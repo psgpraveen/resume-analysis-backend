@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 const resumeRoutes = require('./routes/resume');
 const searchRoutes = require('./routes/search');
+const sample = require('./routes/sample');
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use('/api', authRoutes);
 app.use('/api', resumeRoutes);
 app.use('/api', searchRoutes);
+app.use('/', sample);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI,).then(() => {

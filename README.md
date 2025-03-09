@@ -96,8 +96,8 @@ Authenticate users and generate a JWT token.
 - **Request Body**:
   ```json
   {
-    "username": "naval.ravikant",
-    "password": "05111974"
+    "username": "psgpraveen",
+    "password": "psgpraveen"
   }
   ```
 - **Response**:

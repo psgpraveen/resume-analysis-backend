@@ -3,7 +3,7 @@
 
 # Resume Analysis Backend
 
-A backend application for analyzing and enriching resume data using **Node.js**, **Express.js**, **MongoDB**, and **Google Gemini API**. The application provides three RESTful APIs for user authentication, resume data enrichment, and resume search.
+A backend application for analyzing and enriching resume data using **Node.js**, **Express.js**, **MongoDB**, and **Google Gemini API**. The application provides RESTful APIs for user authentication, resume data enrichment, resume search, and a health check endpoint.
 
 ---
 
@@ -12,6 +12,7 @@ A backend application for analyzing and enriching resume data using **Node.js**,
 - **Authentication API**: Authenticate users and generate a JWT token for secure access.
 - **Resume Data Enrichment API**: Process raw text from resumes, extract structured data using Google Gemini API, and store it in MongoDB.
 - **Resume Search API**: Search resumes in the database by name with case-insensitive and token-agnostic matching.
+- **Health Check Endpoint**: Verify if the backend is running successfully.
 - **Data Encryption**: Sensitive fields like name and email are encrypted before being stored in the database.
 - **JWT Authentication**: Secure access to APIs using JSON Web Tokens.
 
@@ -70,7 +71,25 @@ Before running the project, ensure you have the following installed:
 
 ## API Endpoints
 
-### 1. Authentication API
+### 1. Health Check Endpoint
+Verify if the backend is running successfully.
+
+- **Endpoint**: `GET /`
+- **Response**:
+  - Success (`200 OK`):
+    ```html
+    
+      
+        🚀 Backend is Running Successfully!
+        Developed by psgpraveen
+        Visit My Portfolio
+      
+    
+    ```
+
+---
+
+### 2. Authentication API
 Authenticate users and generate a JWT token.
 
 - **Endpoint**: `POST /api/auth`
@@ -97,7 +116,7 @@ Authenticate users and generate a JWT token.
 
 ---
 
-### 2. Resume Data Enrichment API
+### 3. Resume Data Enrichment API
 Extract structured data from raw text using Google Gemini API and store it in MongoDB.
 
 - **Endpoint**: `POST /api/resume`
@@ -134,7 +153,7 @@ Extract structured data from raw text using Google Gemini API and store it in Mo
 
 ---
 
-### 3. Resume Search API
+### 4. Resume Search API
 Search resumes in MongoDB by name.
 
 - **Endpoint**: `POST /api/search`
@@ -218,12 +237,4 @@ resume-analysis-backend/
 2. Implement caching (e.g., Redis) to improve performance for frequently accessed data.
 3. Add rate limiting to prevent abuse of public endpoints.
 
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-This `README.md` provides a comprehensive overview of your project, making it easy for anyone to set up, understand, and use your backend APIs!
+--- 
